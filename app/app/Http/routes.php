@@ -11,12 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () { return "Hello laravel"; });
+
+Route::group([
+    'namespace'     =>  'Admin',
+    'prefix'        =>  'admin',
+], function () {
+    Route::get('/', 'IndexController@index');
 });
 
-Route::get('/admin', function () {
-    return view('admin/admin_template');
+Route::group([
+    'namespace'     =>  'Api',
+    'prefix'        =>  'api',
+    'middleware'    =>  'api',
+], function () {
+    Route::get('/', 'IndexController@index');
 });
-
-Route::get('/test', 'TestController@index');

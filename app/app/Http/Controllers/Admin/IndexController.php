@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class TestController extends Controller
+class IndexController extends Controller
 {
     public function index () {
         $data['tasks'] = [
