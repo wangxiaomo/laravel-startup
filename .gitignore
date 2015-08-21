@@ -1,3 +1,4 @@
 app/bootstrap/compiled.php
 app/bootstrap/cache
 app/storage/
+app/public/bower_components
