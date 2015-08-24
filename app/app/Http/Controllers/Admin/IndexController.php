@@ -39,4 +39,10 @@ class IndexController extends Controller
         ];
         return view('admin/test')->with($data);
     }
+
+    public function test() {
+        $u = \Session::get('admin_user');
+        $u->logout();
+        dd(\Session::get('admin_user'));
+    }
 }

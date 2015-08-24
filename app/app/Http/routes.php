@@ -13,11 +13,16 @@
 
 Route::get('/', function () { return "Hello laravel"; });
 
+Route::get('admin_hack', 'Admin\AuthController@hack');
+Route::get('admin_login', 'Admin\AuthController@login');
+Route::get('admin_logout', 'Admin\AuthController@logout');
 Route::group([
     'namespace'     =>  'Admin',
     'prefix'        =>  'admin',
+    'middleware'    =>  'admin',
 ], function () {
     Route::get('/', 'IndexController@index');
+    Route::get('/test', 'IndexController@test');
 });
 
 Route::group([
